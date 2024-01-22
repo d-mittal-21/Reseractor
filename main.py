@@ -3,7 +3,7 @@ from tkinter import filedialog, Text, Scrollbar
 import urllib.request
 from src.whitespaceAlgo import text_extraction
 from src.relevancyScore import relevancy_table
-from src.conditionExtraction import topic_extract
+from src.conditionExtraction import topic_extract, condition_extraction
 import socket
 
 
@@ -25,16 +25,16 @@ class Application(tk.Frame):
         self.run_button["command"] = self.run_function
         self.run_button.pack(side="top", pady=10)
 
+        self.quit = tk.Button(self, text="QUIT", fg="red",
+                              command=self.master.destroy)
+        self.quit.pack(side="bottom", pady=10)
+        
         self.scrollbar = Scrollbar(self)
-        self.scrollbar.pack(side="right", fill="y")
+        self.scrollbar.pack(side="right", fill="both")
 
         self.output = Text(self, height=10, yscrollcommand=self.scrollbar.set)
         self.scrollbar.config(command=self.output.yview)
         self.output.pack(side="bottom", fill="both", expand=True)
-
-        self.quit = tk.Button(self, text="QUIT", fg="red",
-                              command=self.master.destroy)
-        self.quit.pack(side="bottom", pady=10)
         
         self.option1_value = tk.IntVar()
         self.option2_value = tk.IntVar()
@@ -86,13 +86,22 @@ class Application(tk.Frame):
                 
     def next_frame2(self):
         # Get the indices of the selected items
+        self.topic_frame.pack_forget()
         selected_indices = self.topic_list.curselection()
 
         # Get the selected items
         selected_topics = [self.topic_list.get(i) for i in selected_indices]
 
         # Now you can use the selected topics for further processing
-        print(selected_topics)
+        self.conditions, res4 = condition_extraction(selected_topics)
+        res4 = 1
+        self.conditions = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q']
+        if res4 == 0:
+            self.output.insert('1.0', "Error in Condition Extraction\n")
+        else:
+            self.output.insert('1.0', "Condition Extraction Successful\n")
+            for condition in self.conditions:
+                self.output.insert('1.0', f"{condition}\n")
     
     def select_files(self):
         self.filepaths = filedialog.askopenfilenames(filetypes=[("PDF files", "*.pdf")])
@@ -102,13 +111,13 @@ class Application(tk.Frame):
             if hasattr(self, 'filepaths'):
                 for filepath in self.filepaths:
                     self.output.insert('1.0', f"Running function on {filepath}\n")
-                data_table = self.process()
+                data_table = self.start_process()
             else:
                 self.output.insert('1.0', "No files selected\n")
         else:
             self.output.insert('1.0', "No internet connection\n")
             
-    def process(self):
+    def start_process(self):
         res1 = text_extraction(self.filepaths)
         res1 = 1
         if res1 == 0:
