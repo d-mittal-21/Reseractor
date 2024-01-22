@@ -3,6 +3,7 @@ from tkinter import filedialog, Text, Scrollbar
 import urllib.request
 from src.whitespaceAlgo import text_extraction
 from src.relevancyScore import relevancy_table
+from src.conditionExtraction import topic_extract
 import socket
 
 
@@ -59,12 +60,39 @@ class Application(tk.Frame):
         # Remove the options frame
         self.options_frame.pack_forget()
         self.relevancy_params = [self.option1_value.get(), self.option2_value.get(), self.option3_value.get()]
-        ids, res2 = relevancy_table(self.relevancy_params)
-        
+        self.ids, res2 = relevancy_table(self.relevancy_params)
+        res2 = 1
         if res2 == 0:
             self.output.insert('1.0', "Error in Relevancy Scoring\n")
         else:
             self.output.insert('1.0', "Relevacy Scoring Successful\n")
+            self.topic_options, res3 = topic_extract(self.ids)
+            res3 = 1
+            self.topic_options = ['a', 'b', 'c']
+            if res3 == 0:
+                self.output.insert('1.0', "Error in Topic Extraction\n")
+            else:
+                self.output.insert('1.0', "Topic Extraction Successful\n")
+                self.topic_frame = tk.Frame(self)
+                self.topic_heading = tk.Label(self.topic_frame, text="Select related words you want to search for")
+                self.topic_heading.pack(side="top")
+                self.topic_list = tk.Listbox(self.topic_frame, selectmode="multiple")
+                for topic in self.topic_options:
+                    self.topic_list.insert("end", topic)
+                self.topic_next_button = tk.Button(self.topic_frame, text="Next", command=self.next_frame2)
+                self.topic_next_button.pack(side="top")
+                self.topic_list.pack(side="top")
+                self.topic_frame.pack(side="top", pady=10)
+                
+    def next_frame2(self):
+        # Get the indices of the selected items
+        selected_indices = self.topic_list.curselection()
+
+        # Get the selected items
+        selected_topics = [self.topic_list.get(i) for i in selected_indices]
+
+        # Now you can use the selected topics for further processing
+        print(selected_topics)
     
     def select_files(self):
         self.filepaths = filedialog.askopenfilenames(filetypes=[("PDF files", "*.pdf")])
@@ -82,6 +110,7 @@ class Application(tk.Frame):
             
     def process(self):
         res1 = text_extraction(self.filepaths)
+        res1 = 1
         if res1 == 0:
             self.output.insert('1.0', "Error in Text Extraction\n")
         else:
