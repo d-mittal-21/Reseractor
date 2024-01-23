@@ -6,3 +6,6 @@ pip install transformers
 pip install bertviz
 pip install urllib3
 pip install sent2vec
+
+// poppler
+// tesseract

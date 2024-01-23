@@ -58,7 +58,7 @@ def filter(txt):
 def topic_extract(ids):
   success = True
   try:
-    conn = sqlite3.connect('articles.db')
+    conn = sqlite3.connect('database/articles.db')
     c = conn.cursor()
 
     # Prepare the query with placeholders for the ids
@@ -106,7 +106,7 @@ def topic_extract(ids):
 def condition_extraction(search):
   success = True
   try:
-    conn = sqlite3.connect('articles.db')
+    conn = sqlite3.connect('database/articles.db')
     c = conn.cursor()
 
     # Execute a query to select all the values from the f_text_table table

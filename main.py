@@ -5,6 +5,7 @@ from src.whitespaceAlgo import text_extraction
 from src.relevancyScore import relevancy_table
 from src.conditionExtraction import topic_extract, condition_extraction
 import socket
+import numpy as np
 
 
 class Application(tk.Frame):
@@ -118,8 +119,8 @@ class Application(tk.Frame):
             self.output.insert('1.0', "No internet connection\n")
             
     def start_process(self):
-        res1 = text_extraction(self.filepaths)
-        res1 = 1
+        res1 = text_extraction(np.array(self.filepaths))
+        # res1 = 1
         if res1 == 0:
             self.output.insert('1.0', "Error in Text Extraction\n")
         else:

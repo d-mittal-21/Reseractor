@@ -1,4 +1,10 @@
 import sqlite3
+import numpy as np
+import cv2
+import os
+import pytesseract
+from PIL import Image as Img
+from pdf2image import convert_from_path
 
 #detect text in passed image
 def detect_text(hsv_img):
@@ -97,11 +103,12 @@ def cols(hsv_img,hsv,height,width,pg_no):
     return st1,st2
 
 def text_extraction(pdf_dir):
+    print(pdf_dir)
     success = True
     try:
-        conn = sqlite3.connect('articles.db')
+        conn = sqlite3.connect('database/articles.db')
         c = conn.cursor()
-        f_corpora = open('text_corpora.txt', 'w')
+        f_corpora = open('database/text_corpora.txt', 'w')
         # Create table
         c.execute('''
             CREATE TABLE IF NOT EXISTS articles
@@ -109,11 +116,12 @@ def text_extraction(pdf_dir):
         ''')
         
         pdf_file_no=1
-        for filename in os.listdir(pdf_dir):
+        for filename in pdf_dir:
             if filename.endswith('.pdf'):
-                print(os.path.join(pdf_dir, filename))
-                pdf_file = os.path.join(pdf_dir, filename)
-                images = convert_from_path(pdf_file)
+                # print(os.path.join(pdf_dir, filename))
+                # pdf_file = os.path.join(pdf_dir, filename)
+                pdf_file = filename
+                images = convert_from_path(pdf_file, poppler_path=r'C:/Program Files/poppler/poppler-23.11.0/Library/bin')
                 text = ""
                 pg_no=0
                 for image in images:

@@ -51,7 +51,7 @@ def generate_embeddings(text):
 def relevancy_table(relevancy_params):
     success = True
     try:
-        conn = sqlite3.connect('articles.db')
+        conn = sqlite3.connect('database/articles.db')
         c = conn.cursor()
 
         # Select all rows from the articles table
@@ -77,7 +77,7 @@ def relevancy_table(relevancy_params):
         conn.close()
 
         # Get an instance of the table in a dataframe
-        conn = sqlite3.connect('articles.db')
+        conn = sqlite3.connect('database/articles.db')
         df = pd.read_sql_query("SELECT * FROM articles", conn)
         conn.close()
         ids = df['id'].tolist()
