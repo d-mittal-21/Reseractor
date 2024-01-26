@@ -103,7 +103,7 @@ def cols(hsv_img,hsv,height,width,pg_no):
         st1 = detect_text(hsv_img)
     return st1,st2
 
-def text_extraction(pdf_dir):
+def text_extraction(pdf_dir, progress_callback=None):
     print(pdf_dir)
     success = True
     try:
@@ -125,7 +125,8 @@ def text_extraction(pdf_dir):
                 images = convert_from_path(pdf_file, poppler_path=r'C:/Program Files/poppler/poppler-23.11.0/Library/bin')
                 text = ""
                 pg_no=0
-                for image in images:
+                total_images = len(images)
+                for i, image in enumerate(images):
                     pg_no+=1
                     img_array = np.array(image)
                     hsv = cv2.cvtColor(img_array, cv2.COLOR_RGB2GRAY)
@@ -137,6 +138,8 @@ def text_extraction(pdf_dir):
                     tex = rows(hsv,row,hsv_img,pg_no) #pagewise text extraction
                     #print(tex)
                     text=text+tex #store text as extracted page by page
+                    if progress_callback is not None:
+                        progress_callback(i / total_images)
                 f_corpora.write(text + '\n')
                 c.execute('''
                     INSERT INTO articles (id, text, title, abstract)

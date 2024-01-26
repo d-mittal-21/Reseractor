@@ -6,6 +6,7 @@ from src.relevancyScore import relevancy_table
 from src.conditionExtraction import topic_extract, condition_extraction
 import socket
 import numpy as np
+from tkinter import ttk
 
 
 class Application(tk.Frame):
@@ -16,10 +17,17 @@ class Application(tk.Frame):
         self.create_widgets()
 
     def create_widgets(self):
+        
         self.select_button = tk.Button(self)
         self.select_button["text"] = "Select PDF Files"
         self.select_button["command"] = self.select_files
         self.select_button.pack(side="top", pady=10)
+        
+        self.search_term_label = tk.Label(self, text="Search Term")
+        self.search_term_label.pack(side="top", pady=10)
+
+        self.search_term_entry = tk.Entry(self)
+        self.search_term_entry.pack(side="top", pady=10)
 
         self.run_button = tk.Button(self)
         self.run_button["text"] = "Run Function"
@@ -57,11 +65,10 @@ class Application(tk.Frame):
     def next_frame(self):
         # Get the values of the options and store them in instance variables
         # print(self.option1_value.get(), self.option2_value.get(), self.option3_value.get())
-
         # Remove the options frame
         self.options_frame.pack_forget()
         self.relevancy_params = [self.option1_value.get(), self.option2_value.get(), self.option3_value.get()]
-        self.ids, res2 = relevancy_table(self.relevancy_params)
+        self.ids, res2 = relevancy_table(self.relevancy_params, self.search_term)
         res2 = 1
         if res2 == 0:
             self.output.insert('1.0', "Error in Relevancy Scoring\n")
@@ -110,17 +117,29 @@ class Application(tk.Frame):
     def run_function(self):
         if self.check_internet():
             if hasattr(self, 'filepaths'):
-                for filepath in self.filepaths:
-                    self.output.insert('1.0', f"Running function on {filepath}\n")
+                self.search_term = self.search_term_entry.get()
+                self.search_term_label.pack_forget()
+                self.search_term_entry.pack_forget()
                 data_table = self.start_process()
             else:
                 self.output.insert('1.0', "No files selected\n")
         else:
             self.output.insert('1.0', "No internet connection\n")
+    
+    def progress_callback(self, progress):
+    # Update the progress bar
+        self.progress["value"] = progress * 100
             
     def start_process(self):
-        res1 = text_extraction(np.array(self.filepaths))
-        # res1 = 1
+        for filepath in self.filepaths:
+                    self.output.insert('1.0', f"Running function on {filepath}\n")
+        self.progress = ttk.Progressbar(self, length=200, mode='determinate')
+        self.progress.pack(side="top")
+        self.progress.start()
+        # res1 = text_extraction(np.array(self.filepaths))
+        self.progress.stop()
+        self.progress.pack_forget()
+        res1 = 1
         if res1 == 0:
             self.output.insert('1.0', "Error in Text Extraction\n")
         else:

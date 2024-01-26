@@ -1,3 +1,14 @@
+import sqlite3
+import numpy as np
+import cv2
+import os
+import pytesseract
+from PIL import Image as Img
+from pdf2image import convert_from_path
+import time
+from sent2vec.vectorizer import Vectorizer
+import pandas as pd
+
 def test_function():
   # Set the folder path containing the PDFs
   folder_path = '/content/drive/MyDrive/UG_ML/Testing'
@@ -45,14 +56,17 @@ def test_function():
           df = df.append({'PDF': filename, 'Abstract': abstract}, ignore_index=True)
   return df
 
-def generate_embeddings(text):
-    return 0
+def generate_embeddings(text, vectorizer):
+    vectorizer.run(np.array(text))
+    vectors = vectorizer.vectors
+    return vectors[-1]
 
-def relevancy_table(relevancy_params):
+def relevancy_table(relevancy_params, search_term):
     success = True
     try:
         conn = sqlite3.connect('database/articles.db')
         c = conn.cursor()
+        vectorizer = Vectorizer()
 
         # Select all rows from the articles table
         c.execute("SELECT * FROM articles")
@@ -62,8 +76,8 @@ def relevancy_table(relevancy_params):
             id, text, title, abstract, text_corpora = row
 
             # Compute the vector embeddings for the title and abstract
-            title_embedding = generate_embeddings(title)
-            abstract_embedding = generate_embeddings(abstract)
+            title_embedding = generate_embeddings(title, vectorizer)
+            abstract_embedding = generate_embeddings(abstract, vectorizer)
 
             # Update the articles table with the embeddings
             c.execute("""
