@@ -9,6 +9,7 @@ from pdf2image import convert_from_path
 #detect text in passed image
 def detect_text(hsv_img):
   #print("in text")
+  pytesseract.pytesseract.tesseract_cmd = r'C:/Program Files/Tesseract-OCR/tesseract.exe'
   resized_block = hsv_img.resize((hsv_img.width * 4, hsv_img.height * 4))
   text = pytesseract.image_to_string(resized_block, lang='eng',config= '--psm 3 --oem 1')
   return text
