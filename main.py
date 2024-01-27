@@ -69,7 +69,7 @@ class Application(tk.Frame):
         self.options_frame.pack_forget()
         self.relevancy_params = [self.option1_value.get(), self.option2_value.get(), self.option3_value.get()]
         self.ids, res2 = relevancy_table(self.relevancy_params, self.search_term)
-        res2 = 1
+        # res2 = 1
         if res2 == 0:
             self.output.insert('1.0', "Error in Relevancy Scoring\n")
         else:
