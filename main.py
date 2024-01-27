@@ -68,15 +68,16 @@ class Application(tk.Frame):
         # Remove the options frame
         self.options_frame.pack_forget()
         self.relevancy_params = [self.option1_value.get(), self.option2_value.get(), self.option3_value.get()]
-        self.ids, res2 = relevancy_table(self.relevancy_params, self.search_term)
-        # res2 = 1
+        # self.relevant_ids, res2 = relevancy_table(self.relevancy_params, self.search_term)
+        res2 = 1
+        self.relevant_ids = [0,1]
         if res2 == 0:
             self.output.insert('1.0', "Error in Relevancy Scoring\n")
         else:
             self.output.insert('1.0', "Relevacy Scoring Successful\n")
-            self.topic_options, res3 = topic_extract(self.ids)
-            res3 = 1
-            self.topic_options = ['a', 'b', 'c']
+            self.topic_options, res3 = topic_extract(self.relevant_ids)
+            # res3 = 1
+            # self.topic_options = ['a', 'b', 'c']
             if res3 == 0:
                 self.output.insert('1.0', "Error in Topic Extraction\n")
             else:
@@ -102,8 +103,8 @@ class Application(tk.Frame):
 
         # Now you can use the selected topics for further processing
         self.conditions, res4 = condition_extraction(selected_topics)
-        res4 = 1
-        self.conditions = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q']
+        # res4 = 1
+        # self.conditions = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q']
         if res4 == 0:
             self.output.insert('1.0', "Error in Condition Extraction\n")
         else:

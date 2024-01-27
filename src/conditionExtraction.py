@@ -1,4 +1,14 @@
 from nltk import FreqDist
+import nltk
+# nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
+from nltk.tokenize import sent_tokenize
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
+from nltk.tokenize import word_tokenize
+import sqlite3
+
 
 def taging(lemm):
   tags = nltk.pos_tag(lemm)
@@ -37,9 +47,9 @@ def lemmat(filtered):
 def preprocess(txt):
   stop_words = set(stopwords.words("english"))
   ref, sent_words, cd_sent = sen_tok(txt)
-  print(stop_words)
+  # print(stop_words)
   filtered = [word for word in sent_words if word.casefold() not in stop_words]
-  print(filtered)
+  # print(filtered)
   lemm = lemmat(filtered)
   return lemm,ref,cd_sent
 
