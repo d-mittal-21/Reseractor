@@ -30,7 +30,8 @@ Next you can follow the [Demo Video](#demo-video) to get use to the GUI.
 
 ### Demo Video
 
-./media/tool_video.mp4
+https://github.com/d-mittal-21/Reseractor/assets/99799403/a4e7d5cc-998a-453d-839b-1dc9b6886483
+
 
 <video width="320" height="240" controls>
   <source src="./media/tool_video.mp4">
