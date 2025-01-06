@@ -1,162 +1,288 @@
-import tkinter as tk
-from tkinter import filedialog, Text, Scrollbar
+import sys
+from PyQt5.QtWidgets import (QApplication, QMainWindow, QPushButton, QLabel, 
+                           QLineEdit, QTextEdit, QVBoxLayout, QWidget, QFileDialog, QMessageBox,
+                           QProgressBar, QCheckBox, QFrame, QListWidget, QScrollArea, QHBoxLayout, QInputDialog)
+from PyQt5.QtCore import Qt
 import urllib.request
 from src.whitespaceAlgo import text_extraction
 from src.relevancyScore import relevancy_table
-from src.conditionExtraction import topic_extract, condition_extraction
+from src.conditionExtraction import topic_extract, condition_extraction, extract_experimental_data
 import socket
 import numpy as np
-from tkinter import ttk
+from PyQt5.QtCore import QThread, pyqtSignal
+import sqlite3
 
+class TextExtractionWorker(QThread):
+    finished = pyqtSignal(bool)
+    progress = pyqtSignal(float)
+    message = pyqtSignal(str)
 
-class Application(tk.Frame):
-    def __init__(self, master=None):
-        super().__init__(master)
-        self.master = master
-        self.pack()
+    def __init__(self, filepaths):
+        super().__init__()
+        self.filepaths = filepaths
+
+    def run(self):
+        try:
+            success = text_extraction(self.filepaths, self.progress.emit)
+            self.finished.emit(success)
+        except Exception as e:
+            self.message.emit(f"Error: {str(e)}")
+            self.finished.emit(False)
+
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("Research PDF Analyzer")
+        self.setGeometry(100, 100, 500, 500)
+        
+        # Create main widget and layout
+        main_widget = QWidget()
+        self.setCentralWidget(main_widget)
+        self.layout = QVBoxLayout(main_widget)
+        
+        # Create widgets
         self.create_widgets()
-
+        
     def create_widgets(self):
+        # Select PDF Button
+        self.select_button = QPushButton("Select PDF Files")
+        self.select_button.clicked.connect(self.select_files)
+        self.layout.addWidget(self.select_button)
         
-        self.select_button = tk.Button(self)
-        self.select_button["text"] = "Select PDF Files"
-        self.select_button["command"] = self.select_files
-        self.select_button.pack(side="top", pady=10)
+        self.clear_button = QPushButton("Clear Database")
+        self.clear_button.clicked.connect(self.clear_database)
+        self.layout.addWidget(self.clear_button)
         
-        self.search_term_label = tk.Label(self, text="Search Term")
-        self.search_term_label.pack(side="top", pady=10)
-
-        self.search_term_entry = tk.Entry(self)
-        self.search_term_entry.pack(side="top", pady=10)
-
-        self.run_button = tk.Button(self)
-        self.run_button["text"] = "Run Function"
-        self.run_button["command"] = self.run_function
-        self.run_button.pack(side="top", pady=10)
-
-        self.quit = tk.Button(self, text="QUIT", fg="red",
-                              command=self.master.destroy)
-        self.quit.pack(side="bottom", pady=10)
+        # Search Term
+        search_layout = QHBoxLayout()
+        self.search_term_label = QLabel("Search Terms (separate by ;)")
+        self.search_term_entry = QLineEdit()
+        search_layout.addWidget(self.search_term_label)
+        search_layout.addWidget(self.search_term_entry)
+        self.layout.addLayout(search_layout)
         
-        self.scrollbar = Scrollbar(self)
-        self.scrollbar.pack(side="right", fill="both")
-
-        self.output = Text(self, height=10, yscrollcommand=self.scrollbar.set)
-        self.scrollbar.config(command=self.output.yview)
-        self.output.pack(side="bottom", fill="both", expand=True)
+        # Run Button
+        self.run_button = QPushButton("Run Function")
+        self.run_button.clicked.connect(self.run_function)
+        self.layout.addWidget(self.run_button)
         
-        self.option1_value = tk.IntVar()
-        self.option2_value = tk.IntVar()
-        self.option3_value = tk.IntVar()
+        # Progress Bar
+        self.progress = QProgressBar()
+        self.progress.hide()
+        self.layout.addWidget(self.progress)
         
-        #relevancy shift
-        self.options_frame = tk.Frame(self)
-        self.options_heading = tk.Label(self.options_frame, text="Select Relevancy Parameters")
-        self.options_heading.pack(side="top")
-        self.option1 = tk.Checkbutton(self.options_frame, text="Title Score", variable=self.option1_value)
-        self.option1.pack(side="top")
-        self.option2 = tk.Checkbutton(self.options_frame, text="Abstract Score", variable=self.option2_value)
-        self.option2.pack(side="top")
-        self.option3 = tk.Checkbutton(self.options_frame, text="Similiarity Score", variable=self.option3_value)
-        self.option3.pack(side="top")
-        self.next_button = tk.Button(self.options_frame, text="Next", command=self.next_frame)
-        self.next_button.pack(side="top")
+        # Options Frame
+        self.options_frame = QFrame()
+        options_layout = QVBoxLayout(self.options_frame)
+        
+        options_heading = QLabel("Select Relevancy Parameters")
+        options_layout.addWidget(options_heading)
+        
+        self.option1 = QCheckBox("Title Score")
+        self.option2 = QCheckBox("Abstract Score")
+        self.option3 = QCheckBox("Similarity Score")
+        
+        options_layout.addWidget(self.option1)
+        options_layout.addWidget(self.option2)
+        options_layout.addWidget(self.option3)
+        
+        self.next_button = QPushButton("Next")
+        self.next_button.clicked.connect(self.next_frame)
+        options_layout.addWidget(self.next_button)
+        
+        self.options_frame.hide()
+        self.layout.addWidget(self.options_frame)
+        
+        # Topic Frame
+        self.topic_frame = QFrame()
+        topic_layout = QVBoxLayout(self.topic_frame)
+        
+        self.topic_heading = QLabel("Select related words you want to search for")
+        topic_layout.addWidget(self.topic_heading)
+        
+        lists_layout = QHBoxLayout()
+        
+        self.topic_list = QListWidget()
+        self.topic_list.setSelectionMode(QListWidget.MultiSelection)
+        
+        self.units_list = QListWidget()
+        self.units_list.setSelectionMode(QListWidget.MultiSelection)
+        
+        lists_layout.addWidget(self.topic_list)
+        lists_layout.addWidget(self.units_list)
+        topic_layout.addLayout(lists_layout)
+        
+        # Add custom unit button
+        self.add_unit_button = QPushButton("Add Custom Unit")
+        self.add_unit_button.clicked.connect(self.add_custom_unit)
+        topic_layout.addWidget(self.add_unit_button)
+        
+        self.topic_next_button = QPushButton("Next")
+        self.topic_next_button.clicked.connect(self.extract_experimental_data)
+        topic_layout.addWidget(self.topic_next_button)
+        
+        self.export_button = QPushButton("Export to CSV")
+        self.export_button.clicked.connect(self.export_to_csv)
+        self.export_button.hide()
+        topic_layout.addWidget(self.export_button)
+        
+        self.topic_frame.hide()
+        self.layout.addWidget(self.topic_frame)
+        
+        # Output Text
+        self.output = QTextEdit()
+        self.output.setReadOnly(True)
+        self.layout.addWidget(self.output)
 
-    def next_frame(self):
-        # Get the values of the options and store them in instance variables
-        # print(self.option1_value.get(), self.option2_value.get(), self.option3_value.get())
-        # Remove the options frame
-        self.options_frame.pack_forget()
-        self.relevancy_params = [self.option1_value.get(), self.option2_value.get(), self.option3_value.get()]
-        # self.relevant_ids, res2 = relevancy_table(self.relevancy_params, self.search_term)
-        res2 = 1
-        self.relevant_ids = [0,1]
-        if res2 == 0:
-            self.output.insert('1.0', "Error in Relevancy Scoring\n")
-        else:
-            self.output.insert('1.0', "Relevacy Scoring Successful\n")
-            self.topic_options, res3 = topic_extract(self.relevant_ids)
-            # res3 = 1
-            # self.topic_options = ['a', 'b', 'c']
-            if res3 == 0:
-                self.output.insert('1.0', "Error in Topic Extraction\n")
-            else:
-                self.output.insert('1.0', "Topic Extraction Successful\n")
-                self.topic_frame = tk.Frame(self)
-                self.topic_heading = tk.Label(self.topic_frame, text="Select related words you want to search for")
-                self.topic_heading.pack(side="top")
-                self.topic_list = tk.Listbox(self.topic_frame, selectmode="multiple")
-                for topic in self.topic_options:
-                    self.topic_list.insert("end", topic)
-                self.topic_next_button = tk.Button(self.topic_frame, text="Next", command=self.next_frame2)
-                self.topic_next_button.pack(side="top")
-                self.topic_list.pack(side="top")
-                self.topic_frame.pack(side="top", pady=10)
-                
-    def next_frame2(self):
-        # Get the indices of the selected items
-        self.topic_frame.pack_forget()
-        selected_indices = self.topic_list.curselection()
-
-        # Get the selected items
-        selected_topics = [self.topic_list.get(i) for i in selected_indices]
-
-        # Now you can use the selected topics for further processing
-        self.conditions, res4 = condition_extraction(selected_topics)
-        # res4 = 1
-        # self.conditions = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q']
-        if res4 == 0:
-            self.output.insert('1.0', "Error in Condition Extraction\n")
-        else:
-            self.output.insert('1.0', "Condition Extraction Successful\n")
-            for condition in self.conditions:
-                self.output.insert('1.0', f"{condition}\n")
-    
     def select_files(self):
-        self.filepaths = filedialog.askopenfilenames(filetypes=[("PDF files", "*.pdf")])
+        self.filepaths, _ = QFileDialog.getOpenFileNames(
+            self,
+            "Select PDF Files",
+            "",
+            "PDF Files (*.pdf)"
+        )
+    
+    def clear_database(self):
+        try:
+            conn = sqlite3.connect('database/articles.db')
+            c = conn.cursor()
+            c.execute('DROP TABLE IF EXISTS articles')
+            c.execute('DROP TABLE IF EXISTS f_text_table')
+            conn.commit()
+            conn.close()
+            
+            # Clear text corpora file
+            open('database/text_corpora.txt', 'w').close()
+            
+            self.output.append("Database cleared successfully")
+        except Exception as e:
+            self.output.append(f"Error clearing database: {str(e)}")
 
     def run_function(self):
         if self.check_internet():
-            if hasattr(self, 'filepaths'):
-                self.search_term = self.search_term_entry.get()
-                self.search_term_label.pack_forget()
-                self.search_term_entry.pack_forget()
+            if hasattr(self, 'filepaths') and self.filepaths:
+                self.search_term = self.search_term_entry.text()
+                self.search_term_label.hide()
+                self.search_term_entry.hide()
                 data_table = self.start_process()
             else:
-                self.output.insert('1.0', "No files selected\n")
+                self.output.append("No files selected")
         else:
-            self.output.insert('1.0', "No internet connection\n")
-    
-    def progress_callback(self, progress):
-    # Update the progress bar
-        self.progress["value"] = progress * 100
-            
+            self.output.append("No internet connection")
+
     def start_process(self):
-        for filepath in self.filepaths:
-                    self.output.insert('1.0', f"Running function on {filepath}\n")
-        self.progress = ttk.Progressbar(self, length=200, mode='determinate')
-        self.progress.pack(side="top")
-        self.progress.start()
-        # res1 = text_extraction(np.array(self.filepaths))
-        self.progress.stop()
-        self.progress.pack_forget()
-        res1 = 1
-        if res1 == 0:
-            self.output.insert('1.0', "Error in Text Extraction\n")
+        self.progress.show()
+        self.worker = TextExtractionWorker(self.filepaths)
+        self.worker.progress.connect(self.update_progress)
+        self.worker.finished.connect(self.process_completed)
+        self.worker.message.connect(self.output.append)
+        self.worker.start()
+
+    def update_progress(self, value):
+        self.progress.setValue(int(value * 100))
+
+    def process_completed(self, success):
+        self.progress.hide()
+        if success:
+            self.output.append("Text Extraction Successful")
+            self.options_frame.show()
         else:
-            self.output.insert('1.0', "Text Extraction Successful\n")
-            self.options_frame.pack(side="top", pady=10)
-        return self.filepaths
+            self.output.append("Error in Text Extraction")
+
+    def next_frame(self):
+        self.relevancy_params = [
+            self.option1.isChecked(),
+            self.option2.isChecked(),
+            self.option3.isChecked()
+        ]
+        self.options_frame.hide()
+        
+        # Similar to your original code, but adapted for PyQt5
+        res2 = 1
+        self.relevant_ids = [i for i in range(1, len(self.filepaths) + 1)]
+        # self.relevant_ids = [0, 1]
+        if res2 == 0:
+            self.output.append("Error in Relevancy Scoring")
+        else:
+            self.output.append("Relevancy Scoring Successful")
+            self.topic_options, self.units, res3 = topic_extract(self.relevant_ids)
+            
+            if res3 == 0:
+                self.output.append("Error in Topic Extraction")
+            else:
+                self.output.append("Topic Extraction Successful")
+                self.topic_list.clear()
+                self.topic_list.addItems(self.topic_options)
+                self.units_list.addItems(self.units)
+                self.topic_frame.show()
+    
+    def extract_experimental_data(self):
+        search_terms = [term.strip() for term in self.search_term_entry.text().split(';')]
+        selected_topics = [item.text() for item in self.topic_list.selectedItems()]
+        selected_units = [item.text() for item in self.units_list.selectedItems()]
+        
+        if not (search_terms and selected_units):
+            QMessageBox.warning(self, "Warning", 
+                "Please enter search terms and select units!")
+            return
+        
+        print("Search terms:", search_terms)  # Debug print
+        print("Units:", selected_units)  # Debug print
+        
+        self.detailed_df, self.pivoted_df = extract_experimental_data(
+            search_terms, selected_topics, selected_units)
+        
+        if not self.detailed_df.empty:
+            # Display results in output
+            self.output.clear()
+            self.output.append("Extracted Data:")
+            self.output.append("\nDetailed View:")
+            self.output.append(self.detailed_df.to_string())
+            self.output.append("\n\nSummary View (grouped by document):")
+            self.output.append(self.pivoted_df.to_string())
+            self.export_button.show()
+        else:
+            self.output.append("No matching data found!")
+
+    def next_frame2(self):
+        self.topic_frame.hide()
+        selected_topics = [item.text() for item in self.topic_list.selectedItems()]
+        
+        self.conditions, res4 = condition_extraction(selected_topics)
+        if res4 == 0:
+            self.output.append("Error in Condition Extraction")
+        else:
+            self.output.append("Condition Extraction Successful")
+            for condition in self.conditions:
+                self.output.append(condition)
+    
+    def add_custom_unit(self):
+        unit, ok = QInputDialog.getText(self, 'Add Custom Unit', 
+            'Enter custom measurement unit:')
+        if ok and unit:
+            self.units_list.addItem(unit)
+
+    def export_to_csv(self):
+        if hasattr(self, 'detailed_df'):
+            filename, _ = QFileDialog.getSaveFileName(
+                self, "Save Data", "", "CSV Files (*.csv)")
+            if filename:
+                # Save both views
+                base_name = filename.rsplit('.', 1)[0]
+                self.detailed_df.to_csv(f"{base_name}_detailed.csv", index=False)
+                self.pivoted_df.to_csv(f"{base_name}_summary.csv", index=False)
+                QMessageBox.information(self, "Success", 
+                    "Data exported successfully!")
 
     def check_internet(self):
         try:
-            # urllib.request.urlopen('http://google.com', timeout=1)
             socket.create_connection(("1.1.1.1", 53))
             return True
-        except urllib.request.URLError:
+        except:
             return False
 
-root = tk.Tk()
-root.geometry("500x500")  # Set the window size to 500x500
-app = Application(master=root)
-app.mainloop()
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    window = MainWindow()
+    window.show()
+    sys.exit(app.exec_())

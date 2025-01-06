@@ -6,6 +6,9 @@ pip install transformers
 pip install bertviz
 pip install urllib3
 pip install sent2vec
+pip install scipy==1.10.1
+pip install layoutparser
+pip install "detectron2@git+https://github.com/facebookresearch/detectron2.git@v0.6#egg=detectron2"
 
 // poppler
 // tesseract

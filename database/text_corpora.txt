@@ -1,1034 +1,216 @@
-Contents lists available at ScienceDirect eechomsetalianery
-
-“|
-
-. Ae 25
-By Sn sh mY ’ er
-i ae J
-a) a
-
-Hydrometallurgy
-
-journal homepage: www.elsevier.com/locate/hydromet
-A literature review of titanium metallurgical processes
-Wensheng Zhang, Zhaowu Zhu, Chu Yong Cheng *
-ARTICLE
-Article history: Various titanium metallurgical processes have been reviewed and compared for titanium dioxide and titanium
-Received 12 July 2010 . metal, mainly focusing on the future development of hydrometallurgical processes. It is recognised that ilmenite
-Received in revised form 8 April 2011 is becoming increasingly important due to the rapid depletion of natural rutile. Many processes are commercially
-Accepted 10 April 2011 . ; ; . ; ae
-. ; used or proposed to upgrade ilmenite to synthetic rutile. Most of these processes involve a combination of
-Available online 16 April 2011
-pyrometallurgy and hydrometallurgy and are generally expensive.
-The commercialised thermo-chemical chloride processes such as Kroll and Hunter processes are batch operations
-
-Keywords:
-Y and need higher grade natural rutile or upgraded synthetic rutile and slag as the feed and the involvement of cost
-
-Titanium
-Titanium dioxide sensitive chlorination and thermo steps. Many improvements for the thermo-chemical processes have been
-Titanium pigment made, but they hold little potential for significant cost reductions beyond current technology. The development of
-the electro-chemical processes for direct reduction of TiQz and electro-slag as feed material and in-situ electrolysis
-has achieved some success. However, some challenging issues such as redox cycling, feeding, kinetics, control
-heat balance have to be resolved before scaling-up to commercial applications.
-Direct hydrometallurgical leach processes are advantageous in processing abundant ilmenite ores, low energy
-Strategies, separation of metals by solvent extraction, reduced wastes and recycling acids, and very promising for
-commercial applications in future. Direct chloride leaching processes have been investigated intensively,
-featuring purification by solvent extraction and reclaiming HCI by hydrolysis or pyrohydrolysis. Caustic leach
-with high selectivity and titanium dioxide nano-technology has also been developed. Further development of
-direct leaching ilmenite coupled with solvent extraction for titanium pigment and metal production, is
-recommended.
-1.1. Titanium occurrence and resources
-also in hard rock deposits, has quite extensive reserves: about
-iron and 100 times greater than copper, yet for structural applications
-titanium
-
-Ss annual use is 200 times less than copper and 2000 times
-less than iron. Its commercial production commenced in 1948 driven
-2009a, 2010). The main titanium-containing minerals are rutile,
-1.2. Titanium products, usages and process overview
-* Corresponding author. Tel.: +61 8 9334 8916; fax: +61 8 9334 8001.
-E-mail address: chu.cheng@csiro.au (C.Y. Cheng).
-0304-386X/$ - see front matter. Crown Copyright © 2011 Published by Elsevier B.V. All rights reserved.
-In the 1950s, titanium deposits containing 30% rutile were common.
-(Minkler and Baroch 1981). IImenite, not only found in beach sands, but
-titanium resource will continue to dominate the titanium industry in the
-future.
-IImenite (FeO-Ti0O> or TiFeO;) contains 40-65% TiO>, depending on
-its geological history. Leucoxene (Fe,03-nTiO>) is a natural alteration
-product of ilmenite, typically containing more than 65% TiO>. Table 1
-sitions (Barksdale 1966;Rhee and Sohn 1990;Whitehead 1983). Rutile
-contains about 95% TiO, and is the most titanium-rich mineral. Its
-The most widely used titanium product is titanium dioxide (TiOQ2),
-Table 1
-Titanium minerals and their chemical compositions.
-Mineral Composition TiO» content (%)
-Rutile TiO, (tetragonal, twinned) ~95%
-Anatase TiO, (tetragonal, near octahedral) ~95%
-Brookite TiO, (orthorhombic) ~95%
-Iimenite
-Leucoxene
-Arizonite
-Perovskite
-Geikielite
-
-FeO -T105
-
-Fe,03° nTiOz
-
-Fe,03° nTiO> -mH,0
-CaTiO3
-
-MeTiO;
-
-40-65%
-
->65%
-Titanite or sphene CaTiSiO;
-Titaniferous magnetite (Fe-Ti)203
-high grade rutile. All these make the upgrading of ilmenite to synthetic
-as flux in glass manufacture. Only about 6% is used to produce metallic
-titanium (Rosebaum 1982). The major sources of TiO, are from:
-Natural rutile. After a series of concentration of beach sands through
-gravity concentration, electrostatic separation to remove non-
-conducting zircon materials and magnetic separation to separate
-magnetic ilmenite, the rutile concentrate containing about 95% TiO2
-is used as TiO raw material directly (Kahn, 1984).
-
-Synthetic rutile. There are a few processes to remove the iron from
-ilmenite to produce synthetic rutile which typically contains about
-92% TiO>.
-
-High titanium slag. IlImenite is smelted in an electric arc furnace to
-produce pig iron and high titanium slag which typically contains
-about 85-90% TiQ>.
-The biggest consumer of TiO>z is the pigment industry. Unusual
-optical properties appear when the average particle size of TiO> is
-reduced to <100 nm, including high transparency to visible light and
-high UV absorption (Ellsworth et al. 2000). Nano-particles of TiO> also
-cause some components of visible light to be reflected and refracted
-differentially, leading to the phenomenon of iridescence. Nano-particles
-of TiO; have found applications in cosmetics, porcelains and ceramics
-industries as coating material and additives. Nano-particles of titanium
-oxide have received great attention recently for their potential
-applications in catalysis and as photo-electrochemical material. The
-Thermo/Electro-Chemical Processes Hydrometallurgical Processes
-(40-65% TiO3)
-Ilmenite
-
-(90-95% TiO>)
-
-(>90% TiO>) (95% TiO2)
-Natural rutile Synthetic rutile Fe scrap
-
-HCl Leaching | | H,SO, leaching
-
-TiCly
-FeSO,-H,O
-
-Ti slag
-
-Me or Na
-
-Sponge Ti Cathode T1
-“
-Melting
-TiO, TiO,
-
-Ti Metal (>99.5 pigment) (>98 TiO, Anatase)
-high photo-catalytic activity of titanium oxide by irradiation of visible
-light has been rapidly developed in recent years (Sakatani et al. 2002;
-Sakatani and Koike, 2003, 2004).
-The processes for production of pigment grade TiO, and titanium
-metal are schematically presented in Fig. 1. There are two processes to
-manufacture titanium pigment: the sulphate process and the chloride
-process. The two processes differ in both their chemistry and raw
-material requirements (Hamor 1986). Because the chloride process has
-some advantages over the traditional sulphate process in cost and waste
-management, it has dominated the pigment industry in recent times.
-However, unlike the sulphate process
-
-in which low-grade titanium raw
-material is acceptable, the chloride process needs a high grade of rutile
-rutile more and more important. However, the upgrading processes are
-generally expensive due to the involvement of multi steps of energy
-sensitive thermo reductive conversions and leaching to remove iron
-impurities.
-
-Titanium metal is commercially produced by thermo chemical
-reduction processes using TiCl, as feed material. The low efficiency
-and high energy consumption in the batch operations make the
-thermo chemical processes rather expensive. Electro chemical
-reduction and direct reduction process for TiO2 in molten CaCl2 to
-produce pure titanium metal and its alloy have been developed in
-recent years as a potential alternative to the conventional commercial
-processes (Chen et al., 2000, 2001; Fray, 2001; Ono and Suzuki 2002;
-Suzuki 2007; Suzuki et al. 2003). However, difficulties in eliminating
-redox cycling and in handling very reactive dendritic products.
-
-In the next decade, global demand growth for TiO> is expected to
-continue to increase at an average rate of about 3% annually (Gambogi,
-2009a, 2009b, 2010). Growth higher than the average is expected to
-occur in the Asia region. China in particular is expected to lead world
-growth in production and consumption. However, the proliferation of
-small TiO, pigment plants using the sulphate-route in China was
-expected to recede as environmental concerns rise. TiOz production
-capacity in China is expected to double, reaching 1 Mt/yr by the end of
-the decade. In the next several years, prices for TiO, pigment are
-expected to rise because of increasing costs for chlorine, coke, caustic
-soda, and energy. Growth in aerospace, defence, and industrial uses will
-W. Zhang et al. / Hydrometallurgy 108 (2011) 177-188
-world-wide capacities would be expected to reach 350,000 t/yr
-(Gambogi, 2009a, 2009b, 2010).
-In recent years, direct hydrochloric leaching and solvent extraction
-(SX) hydrometallurgical processes have been developed to produce
-pigment grade TiOz (>99.5%) and titanium metal through conven-
-tional fused electrolysis (Duyvesteyn et al., 2001a, 2002; Lakshmanan
-et al., 2001, 2002, 2004a, 2004b, 2005a, 2005b; Lakshmanan and
-Sridhar 2002; Puvvada et al. 2003; Verhulst et al., 2002, 2003).
-Improved sulphate processes and caustic leach processes have also
-been developed. Hydrometallurgical processes will become more and
-more important due to its low energy requirement compared to the
-conventional thermo and electro chemical processes.
-This review briefly summarises the conventional thermo and electro
-chemical processes and highlights the ilmenite processing and the
-production of titanium dioxide and metal through hydrometallurgical
-routes. Various processes for titanium production are compared in
-terms of their technical feasibility, economics and product quality,
-aiming at identifying promising processes and directions in future
-development for fully hydrometallurgical processes.
-into another fluidised bed where ferric ion is reduced by a reducing
-agent (for example, H> gas). The product from the second fluidised bed
-2. Upgrading ilmenite to synthetic rutile
-There are a number of commercialised or proposed processes to
-produce synthetic rutile or high grade titanium slag from ilmenite as
-feed for the chloride process. These processes involve a combination
-of thermal oxidation and reduction by roasting, leaching and physical
-separation steps. Iron is converted to soluble ferrous or elemental
-forms by reduction at high temperatures followed by acid leaching to
-obtain synthetic rutile (TiO2) products. The process features are
-summarised in Table 2 and discussed subsequently.
-An industrial process for upgrading ilmenite to synthetic rutile is
-typically represented by the Becher process (Bracanin et al. 1980;
-Cassidy et al., 1986; Farrow et al. 1987; Hoecker, 1994; Reaveley
-1980). The ilmenite contains 40-65% titanium as TiO:, with the rest
-being iron oxide. The Becher process removes the iron oxide, leaving a
-residue of synthetic rutile, which contains more than 90% TiO>. A
-schematic flowsheet comprising four major steps: oxidation, reduc-
-tion, aeration and acid leach is shown in Fig. 2.
-
-Oxidation involves heating the ilmenite in a rotary kiln with air to
-convert the iron in ilmenite to iron oxides:
-AFeTiO3,,) + Oz.) > 2Fe,03-TiO,,,) + 2TIO,,,.
-This allows for the use of a wide range of ilmenite materials with
-various Fe(II
-
-Nee
-
-and Fe(III
-
-ed
-
-forms for subsequent step.
-Process Pyro-treatment Leaching Advantage Disadvantages
-The Becher sulphate
-
-Iron oxidised to Fe,O2 and reduced (a) NH,C1/O>
-
-Multi step iron conversions and leaching
-Improved efficiency by using fluidised beds Similar to the Becher processes
-but fluidised beds for the
-
-Easier HC! recycle than sulphate system
-The Laporte process
-
-Lower temperatures for iron
-
-18% HC! with a bed
-
-Free of formation of fine TiQ> particles
-conversion to FeO with controlled contactor Ease for leaching FeO lower temperature used
-carbon thermo-reduction
-ilmenite with Cl>5
-The Kataoka process Conversion to ferrous form H2SO4 Less corrosive using H2SO,4 than HC! Produce large iron sulphate wastes
-Reduction is performed in a rotary kiln with pseudobrookite
-Fe,03 ‘TI05/.) + 3CO,,) oo 2Fe,. — 2T105/.) ~ 3CO3,4)
-The metallic iron is oxidised and precipitated from the solution as a
-form of slime in the aeration “rusting” step in large tanks with 1%
-ammonium chloride solution at 80°C. The finer iron oxide is then
-separated from the larger particles of synthetic rutile.
-4Fe..) + 302/¢) > 2Fe,03
-Once the majority of the iron oxide is removed, the residual iron
-oxide is leached using 0.5M sulfuric acid and separated from the
-synthetic rutile.
-Another commercial process, the Benelite process, employs carbon
-thermo-reduction for conversion of other iron forms to ferrous state and
-is then separated by leaching with 18-20% HCl. Fluidised beds are used
-in the Murso process (Sinha, 1972, 1975) for the thermo-conversions,
-where the pre-oxidation of ilmenite is carried out in a fluidised bed ina
-temperature range of 900-950 °C, and the hot oxidised ore is transferred
-is then leached with about 20% HCl at 108-110 °C. The remaining HCl
-rutile from the leach solution
-In the Laporte process, the ore is pre-oxidised in a fluidised bed at
-about 950 °C (Robinson et al. 1977) followed by reductive roasting in
-a rotary kiln using coal as reductant at ca 900 °C. The incomplete
-reduction of iron to the ferrous state without metallisation is achieved
-by the appropriate choice of equipment, temperature and reductant.
-There is a sufficient CO, partial pressure developed to prevent the
-formation of metallic iron due to the reaction:
-CO 0) + Fe.) — FeO...) + CO,.)
-The roasted ore is so reactive that a single stage leach with 18% HCl at
-atmospheric pressure for 3.5 h is all that is needed, yielding a product of
-the same overall particle size range as the starting ore. A bed contactor is
-used for leaching to prevent the formation of very fine particles from the
-soft feedstock. It is claimed that the discharged ore is free of fine TiO>
-particles.
-
-Reduction roasting, in which iron in ilmenite is reduced to ferrous
-Kataoka process in Japan (Kataoka and Yamada 1973). In this process,
-hydrated titanium dioxide is added to the leaching solution as seeds to
-removal of iron. This also allows the separation of iron from the ore at
-magnetic iron form
-Ilmenite (FeTiO3) Oy +NH,Cl
-
-Air Coal+S Reduced Oxidative Separation
-Oxidation Reduction | Ilmenite | precipitation P Fe, 0s
-
-(Fe,03) (Fe) Ti0O>2/some Fe
-oxides
-
-Ti05
-Washing & drying —_| S/L separation H,SO,
-Leach
-
-Synthetic rutile Fe impurities
-co
-Mn
-—
-lower temperature and at a sulphuric acid concentration that makes the
-the ilmenite can be recovered.
-While most processes produce synthetic rutile with 93% TiOs;, in the
-—
-
-Walpole and Winter 2002). Ilmenite ore is roasted at temperatures
-gangue minerals may be easily removed by magnetic separation.
-leaching is enhanced. Iron and other impurities are removed by leaching
-and a synthetic rutile containing >97% TiO> is obtained.
-A different thermo-conversion was proposed in the Dunn process
-proposed selective chlorination process is that iron in ilmenite is more
-readily chlorinated than titanium. Excess ilmenite in the fluidised bed
-prevents the chlorination of titanium because any titanium that
-chlorinates will react with iron oxide to form titanium dioxide. The
-iron chloride gas leaving the fluidised bed reacts with oxygen to form
-Fe,03 and Cl,5 gas for recycle as described in the following equation
-4FeCls/.)
-
-+ 300)
-
-= 2Fe703/)
-The reactivity of ilmenite ore during leaching with hydrochloric acid
-was greatly enhanced by reduction in solution using metallic iron
-powder for 1 kg ilmenite ore) was proved to largely enhanced the
-with 2.5 h under similar other leach conditions with no iron powder
-the removal of iron from the mineral lattice and avoid titanium
-dissolution. Without addition of a reductant, iron leaching efficiency did
-not exceed about 55% when using concentrated HCl (12 M) with an S/L
-ratio of 1:5 at 90 °C for 8 h although almost complete insolubilisation of
-titanium was realized. Addition of metallic iron raised the recovery to
-89% TiO>. It is clearly evident that addition of a reductant is necessary to
-mineralogical composition resulting from the existence of the three
-fundamental solid solution series in the FeEOQ—Fe,03-TiO> ternary system
-pseudobrookite series.
-3. Thermo and electro chemical processes
-system is used to produce a purer TiO and titanium metal employing
-more complicated technology (Fig. 1). First, synthetic rutile or high
-erade titanium slag is obtained from upgrading the ilmenite ores and is
-then purified by chlorination at an elevated temperature
-
-—,
-
-900-950 °C)
-to obtain pure titanium tetrachloride (TiCl,):
-TIO3,,) + 2Clo9) + 2C(s) = TiCly,,) + 2CO/.)
-TiO,
-
-+ 2Cly.o)
-
-) + C(s) =
-
-+ CO9/)
-The TiCl, is separated from impurities by condensation and
-distillation. However the separation of TiCl, from VOCI: is difficult due
-to their close boiling points and needs special treatment by adding
-mineral oil, H»S gas, or copper metal. Three commercial processes are
-Baroch 1981), namely fluidised bed process (most widely used), shaft
-furnace process and chlorination in a molten salt bath (former U.S.S.R.
-gaseous chlorine, which Is capital intensive, resulting in the formation of
-dioxins, furans, and other deleterious persistent organic pollutants
-(Lakshmanan et al.
-
-2004a). After the oxidation of the titanium
-tetrachloride at high temperature to produce titanium dioxide, a
-reduction stage is used to convert the purified titanium dioxide to
-number of techniques to obtain titanium metal. The wastes produced by
-The Hunter process is the pioneering process developed in 1887 to
-reduce TiCl, to titanium metal in a molten sodium bath. It was later
-1940 to reduce TiCl4 in molten magnesium at 900 °C (Table 3). The
-low efficiency, high energy consumption and high cost, and
-recycling (Jackson and Dring 2006). Since then, numerous investiga-
-tions have been reported and several alternative processes have been
-developed, including better reactor design, omitting cooling step
-between the TiCl, reduction with vacuum distillation, the develop-
-W. Zhang et al. / Hydrometallurgy 108 (2011) 177-188
-Processes for reduction of tetrachloride to titanium metal.
-Process Features Advantage
-Labor-intensive ba
-
-tch process:
-processes (T
-
-hermo)
-
-metallic impurities; lower co
-
-stly using Me heterogeneous exothermic reactions;
-than Na reduction
-van Vuuren et al. 7005
-Cardarelli
-
-2003;
-and CO evolution
-feed in a single cell
-(direct electro ) cathode; inert anode for O> evolution; efficiency; potential continuous pellet feed: long time for removing Fray, 2001
-producing final titanium products (van Vuuren 2009). Researchers at
-produce titanium powder, and Elliott (1998) reported to circulate the
-molten salt (the TiLAC process). To increase the production efficiency
-and energy efficiency, TiCl, was tested as the feed material (Takeda and
-Okabe, 2006). Alternative processes were also reported, including the
-production of titanium alloys, production of titanium ingots, carboni-
-trothermic reduction method, fluorotitanate process, and calcium
-processes, such as the Kroll and Hunter processes, hold little potential
-to significantly reduce the cost of titanium. The Timet and D-H titanium
-(Table 3). Major advantages of electrochemical extraction are reduced
-energy consumption, automation, and continuous production. However,
-the electrolysis process suffers from difficulties in eliminating redox
-cycling and in handling very reactive dendritic products, which has
-hindered its success in commercialisation (Chen et al. 2000).
-Recently, a direct electro-chemical reduction technique shows
-tremendous promise to reduce the cost of titanium production. The
-direct reduction process accomplishes the production in one single step
-(Suzuki et al. 2003 ). The production cost would be largely reduced if TiO;
-can be used as a feed material without use of chlorination for the TiCl,
-including Electro-slag electrolysis processes (ESE), the OS Process and the
-Fray—Farthing—Chen (FFC) process, with their own features (Table 3). In
-comparison, the FFC process features better efficiency, but the require-
-Improved thermo processes.
-Process Features
-Continuous, low temperature Tl metal product
-Ti alloy and ingots processes
-
-Production of Ti alloys or ingots
-Carbonitrothermic reduction Alternative reductants or reagents
-Fluorotitanate process
-Calcium reduction
-Disadvantage Reference
-the waste CaCl2 after the electrolysis
-material could be an alternative in the scale-up.
-Hydrometallurgical processes
-titanium dioxide from ores involves roasting and leaching to obtain an
-intermediate product of synthetic rutile with 90-95% TiO>,. Hence
-further purification such as chlorination is required to produce a
-pigment-grade titanium dioxide, which makes the process compli-
-cated and adds costs to the process. To solve this problem, direct
-leaching—purification processes have been developed to obtain
-pigment grade titanium dioxide without the production of interme-
-diate synthetic rutile. Titanium dioxide nano-technology has also
-been developed. The process features are compared in Table 5.
-convert ilmenite to titanium pigment. In the sulphate process
-
-+
-
-ilmenite
-(40-60% TiO2) and/or titanium slag (72-87% TiOz) is digested with
-sulphuric acid to form water soluble sulphates (titanyl sulphate TiOSO,
-and iron sulphates). Metallic iron scrap is used to reduce the ferric iron to
-ferrous iron which otherwise will co-precipitate with TiOz and
-contaminate the product. The solution is then cooled down to crystallise
-the iron as ferrous sulphate heptahydrate (FeSO,:7H>0O). To this point,
-the process is in the “black stage”. The solution is then subjected to
-hydrolysis and the resultant solids are subjected to calcination to produce
-anhydrous TiO>. This is so-called the “white stage”. It uses simple
-technology and lower grade and cheaper raw materials to produce a form
-preferred over the pigment from the chloride process for use in papers,
-lower quality products for most applications and large quantities of waste
-Reference
-Comparison of sulphate processes with chloride processes.
-Traditional sulphate leaching
-
-Natural ilmenite
-(>44 Ti0>) Ti slag
-
-iron sulphate waste and dilute
-process Fe scrap reductant extraction; >97% with
-crystallisation
-Thermo chloride processes
-
->90% Ti0> natural or
-
-Pigment grade products
-Chloride leaching process
-expensive acid treatment th
-
-an the chloride process. A typical conven-
-Leaching
-Ferric reduction
-Fe, (SO4)3 + Fe — 3FeSO,
-Ferrous sulphate crystallisation
-FeSO, + 7H,0 — FeSO, ‘ 7H,0
-
+Processing Map for Hot Working of Metals
+When a metallic alloy is subjected to deformation at high temperatures, it may undergo microstructural
+changes through different mechanisms. Some of these (e.g., dynamic recrystallisation and dynamic
+recovery) are known to be “‘safe’’ mechanisms, while others (e.g., void formation and wedge cracking) lead
+to the formation of defects.'’! Processing maps depict the hot workability of an alloy, by combining
+information about the ease with which its microstructure changes upon deformation with delineated regions
+of unstable flow. As such, they can be a useful tool to assess the ideal processing conditions that ensure a
+defect-free final product.''! This report provides an overview of the model used in JMatPro® to calculate
+processing maps from flow stress data.
+Power Dissipation Map
+Processing maps are calculated in the framework of the dynamic materials model,''°! whereby the metallic
+alloy in the hot working process (1.e., the workpiece) is described as a nonlinear dissipator. Crucially, the
+power absorbed during plastic flow is written as a sum of two explicit functions of the flow stress, 0, and
+strain rate, é:'-°.
+P=G+J =f{ odét+f édo =o8
+The first integral, G, known as the dissipator content, describes the power dissipated into heat, while J, the
+dissipator co-content, is related to microstructural changes in the workpiece.!'*! Usually, G > J, and the
+maximum co-content is obtained for a linear dissipator:"' 7!
+Imax =>
+
+9)
+The efficiency of power dissipation is then defined as the ratio"!
+The above quantity represents the ability of the workpiece to change its microstructure upon deformation.
+It may be derived entirely from flow stress data, either measured experimentally or calculated from suitable
+models. By plotting isovalue contours of 7 as a function of temperature, 7, and strain rate, a power
+dissipation map is obtained.'' ”! This forms the first part of a processing map.
+Instability Criteria
+The mechanisms that produce defect-free microstructures during high-temperature deformation, namely
+dynamic recrystallisation, superplasticity, and dynamic recovery,''! are associated with high efficiency of
+power dissipation.'-! However, such is also the case for the detrimental mechanisms of void formation and
+wedge cracking."'*! A power dissipation map alone is, thus, insufficient to fully characterise the hot working
+behaviour of an alloy. In order to achieve this and, in particular, to optimise the processing parameters, it
+is important to distinguish those undesirable regions of unstable flow. By using appropriate instability
+criteria,!°*! it is possible to identify such regions and build an instability map, which when superimposed
+on the isoefficiency contours results in the final processing map."'”!
+Instability criteria may be established under a number of different assumptions. A common route 1s to apply
+stability concepts from Ziegler’s plasticity theory to the dissipation functions of the dynamic materials
+model. This approach leads to the Kumar-Prasad and Murty-Rao criteria,”*! respectively given by
+_ Od ln(m/(m+1))
+¢K-P =— a, +m<0
+and
+(1)
+(2)
+(3)
+(4)
+((,-S) ayey wiens) 607 ! !
+a i
+
+©
+
+“ - = 7 oy o
+((,-S) ayy ulesg) 607
+
+1000
+
+1050
+
+—_»
+=)
+Temperature (~C)
+Figure 1: Power dissipation maps obtained for superalloy IN718 from measured flow stress at a fixed strain of 0.5.!!
+The JMatPro® implementation (a) agrees well with the work of Ref. 3 (b).
+where m denotes the strain rate sensitivity parameter:!
+_ Oolno
+ Olne
+
+The difference between conditions (4) and (5) is in the underlying form of the flow stress versus strain rate
+curve. The Kumar-Prasad instability criterion assumes a power law relationship,
+while the Murty-Rao one works for arbitrary curves.’*! When using the Kumar-Prasad criterion to outline
+the regions of unstable flow, the efficiency of power dissipation is also often calculated with the above
+constraint (Eq. 7).''*! In the JMatPro® implementation, however, the more general equation (3) is always
+used to determine the power dissipation map. This follows closely the work of Murty et al.”! and calculated
+results from the same data agree well with those of Ref. 3, as illustrated in Fig. 1 for the nickel-iron-based
+superalloy IN718 (N1-0.5AI-19Cr-18.5Fe-3Mo-5.1Nb-0.2S1-0.9T1-0.04C wt%).
+For most alloys at typical processing conditions used in hot working, the Kumar-Prasad and Murty-Rao
+criteria lead to similar predictions. This is exemplified in Fig. 2, which shows a comparison of the
+processing maps obtained considering both criteria for general steel 3310 (Fe-1.52Cr-0.45Mn-0.03 Mo-
+3.33N1-0.18S1-0.11C-0.03P-0.04S wt%). The JMatPro® flow stress module was used to calculate the
+required data to build these processing maps (typical stress-strain curves are also shown in Fig. 2).
+Alternative criteria may be developed on the basis of Lyapunov’s stability theory, with Lyapunov functions
+built from quantities introduced in the dynamic materials model. This approach leads to the Gegel and
+Alexander-Malas criteria,'°*! respectively given by
+m <0
+on
+Olné
+s—1<0
+OS
+Olne
+
+and
+m <0
+
+om
+
+__ ~ @lné
+SA-M = s—-1<0
+
+Os
+
+Olne
+
+1000
+Temperature (“C)
+(6)
+(8)
+(9)
+Stress (MPa)
+
+390
+
+300
+
+250
+
+200
+
+150
+
+100
+
+90
+
+Strain Rate (s*')
+0.001
+0.01 ——
+01-——
+,——
+10 ——
+100
+1000 -——
+
+Stress (MPa)
+
+390
+
+300
+
+250
+
+200
+
+150 jj
+
+Temperature (°C)
+800
+
+850 ———
+900 ——
+950 ———
+1000 ————
+1050
+
+1100 ———
+1150 ———
+1200 ———
+((,-S) ayey less) 607
+Temperature (“C)
+Figure 2: The top panels show flow stress curves calculated for general steel 3310 at a fixed temperature of 1000 °C
+(a) and a fixed strain rate of 1 s' (b). The bottom panels show processing maps derived from such data at a fixed
+strain of 0.1. The coloured lines are isoefficiency contours, while the shaded areas are regions of unstable flow
+predicted using the Kumar-Prasad (c) and Murty-Rao (d) instability criteria.
+s= Oilng
+~ T0Q(1/T)
+
+The only difference between criteria sets (8) and (9) is in the second condition, with 7 in the Gegel version
+replaced by m in the Alexander-Malas case. Again, for processing parameter ranges typical of hot working,
+the regions of unstable flow predicted by the Gegel and Alexander-Malas criteria sets are very similar, as
+illustrated in Fig. 3 for general steel 3310.
+The JMatPro® module that deals with the calculation of processing maps allows the user to select one of
+the instability criteria discussed here, but further possibilities exist.'°! It is important to stress that none of
+the existing criteria is generally applicable to every material type and, in some cases, they can lead to
+contradictory predictions, as can be seen by comparing the processing maps of Figs. 2 and 3. The
+contradictory nature of various calculations has been reported previously in the literature'*! and care needs
+to be taken when choosing which criterion to use.
+Summary
+Modelling of processing maps is a subject that has drawn some controversy. There are doubts about both
+the rigorousness of the analytical approach and the correctness of the predicted results.'°*°! The situation is
+((,-S) ayey less) 607
+Temperature (“C)
 (10)
-Titanyl sulphate precipitation
-TiOSO, + H,O — TiOSO,-2H,0
-
-(11)
-Hydrolysis
-TiOSO, + 2H,0O — TiO(OQH), + H»SO,
-Calcination
-TiO(OH), > TiO, +H,
-
-(13)
-In a patent process by Watanable and Sei (1988), the recovery of
-titanium from sulphuric acid solutions containing mainly titanium and
-iron comprises (a) adding NaCl or the like to the solution and extracting
-iron as chloride complex with one or more organic extractants from the
-group of oxygen-containing organic solvents and alkylamines,
-(b) extracting titanium from the raffinate from (a) into the organic
-phase as chloride complex with one or more organic extractants from
-the group of alkylphosphoric acids and alkylarylphosphoric acids,
-(c) stripping the resultant organic solution with an aqueous solution
-containing NHZ or K* together with HF, and then (d) adding NH3 gas,
-NH,(OH) or KOH to the aqueous solution to form a precipitate such as
-(NH,)2TiF, or titanium hydroxide. Titanium halides and alkoxides can
-be produced from the precipitate.
-
-Researchers at BHP Billiton Innovation Pty invented an improved
-sulphate process for production of titania (Roche et al. 2004). The
-process, as shown in Fig. 3, features:
-(i) The use of at least a part of raffinate from solvent extraction
-consumption; simple technology
-
-H»SO, production
-Reduced waste: producing clean Increased process complexity
-to produce purer products acid solution
-Suitable for larger scale corrosive high energy consumption:
-complicated technology
-Waste more environmentally
-Higher capita
-
-| costs for equipment
-lower cost for waste and more and construction: higher requirement
-environmental acceptable: higher for operation and maintenance skill
-Higher leaching selectivity for T1 Need for transformation of titanate to
-over Fe; mild leach conditions at hydrous T10> in acidic solution;
-solution and energy consumption
-effluents and/or their neutralization products such as 'brown
-sypsum'; and allows recuperation of heat and also eliminates
-energy intensive acid recovery and evaporative concentration
-steps.
-simplify downstream processing of the iron sulphate.
-(iv) Selective solvent extraction (SX) step with organic systems such
-as trioctylphosphine oxide (TOPO) and butyl dibutylphospho-
-nate to separate titanium from impurities of iron, chromium,
-manganese and niobium.
-(v) Due to the solvent extraction step, the titania produced has a
-very high purity (>99%).
-(vi) The use of a reductant such as metallic iron, Ti(IIl) salts, SO>,
-thiosulphate, etc. to makes it possible to use less concentrated
-Sulphuric acid than is required for the conventional sulphate
-process.
-In another patented process developed BHP Billiton researchers
-Roche, et al. 2005), crystallisation of titanyl sulfate step is used as an
-alternative to solvent extraction to produce TiOSO, crystals which is
-then dissolved and hydrolysed to form a solid phase containing
-hydrated titanium oxides followed by calcining the solid phase and
-forming titania. In the hydrolysis step, the crystal growth in the
-reactor could be controlled under temperature, residence time and
-solution concentration to produce coarse hydrated titanium oxides
-with a particle size of at least 0.005-0.01 mm or fine hydrated
-titanium oxides with a particle size of less than 0.0005 mm, suitable
-for a wide range of further processing. Compared to the use of solvent
-extraction technique in the process, the crystallisation is simpler, but
-the final synthetic product is less pure with about 97% TiO>. Both
-flowsheets have been tested to a continuous pilot stage.
-
-Further research and development by the BHP Billiton researchers
-resulted in an alternative involvement of a reduction roasting step to
-reduce ferric iron to ferrous iron in the ilmenite by a reducing gas at a
-controlled temperature range to avoid formation of rutile that is
-unleachable under the conditions of leaching step (Stuart et al. 2005). It
-may also comprise a mixture of hydrogen, carbon monoxide, and/or
-methane, and another suitable gas such as inert gas and/or carbon
-dioxide. This reductive pre-treatment step make the leaching efficiency
-W. Zhang et al. / Hydrometallurgy 108 (2011) 177-188
-Leachate
-Ilmenite
-Scrap Fe
-
-98% H5SO,4
-Scrap Fe
-Residue
-Leach Stage 2 Leach Stage |
-
-Raffinate
-
-Residue Leachate
-
-_ So _
-. TiOSO4 a Dilute acid to
-Water Hydrolysis > gypsum pp
-
-TiO(OH)>
-
-Calcination
-
-ie
-_—
-Ina
-which may result in sensitive energy consumption.
-seed resulting in premature precipitation of the dissolved titanyl
-sulphate during the leach step and is one of the major factors in
-preventing the achievement of high extraction rates (Stuart et al. 2010).
-Ilmetite
-Scrap Fe
-
-98% H,SO,
-
-Leach Stage
-
-Pre-treatment
-SO,/N>
-
-Leachate
-Filtrate
-35-40%
-H,SO, Titanyl sulphate Copperas FeSO4
-
-Crystallisation Crystallisation Crystals
-
-TiOSO,-2H,O TiO(OH),
-
-Titanium Bl 3 ;
-. ; eaching 3+,
-Dissolution & Ti” solution
-
-Al,(SO4);
-
-Calcinatio ,
-Reduction H,PO,
-
-OR 5+1) 5%
-
-(0.27+0.03um 102
-(Fig. 4). It was also found by the inventors that the co-precipitated ferric
-iron with titanyl sulphate tended to be carried forward to downstream
-reduction step is used with a suitable reductant such as Ti°~ species,
-hydrolysis of TiO(OH)z to reduce chromophores into their soluble
-forms. In calcination step, additives of a mixture of K5SO,, ZnO and
-range of 0.27 + 0.03 um. The final rutile product obtained is 98.5 + 0.5%
-leach solution is subjected to solvent extraction of iron with TBP and
-and subjected to pyrohydrolysis to recover iron as iron oxides. The
-Berkovich (1975) to dissolve at least 80% of the titanium and iron in the
-ilmenite ore. Ferric ions were reduced to ferrous ions by SO> and the
-resultant FeCl, was crystallised and separated. The titanium chloride in
-the solution was hydrolysed, precipitated, further purified and calcined
-to reduce some Ti** to Ti°*. Due to the greater affinity of Ti°* for
-oxidation, as compared to Fe**, the presence of a small quantity of Ti?*
-in the solution decreases the tendency for Fe~* ions to later oxidise to
-Fe’* and possibly contaminate the later-formed TiO; (Berkovich, 1975).
-subsequent separation of iron by conventional hydrolysis or solvent
-extraction. Pyrohydrolysis is a distinct feature of the chloride leaching
-process to recover TiOz and MgO reagents, and simultaneously recover
-electrowon using the fused salt electrolysis technique. The advantage of
-FeTiO, + 4HCl — TiOCI, + FeCl, + 2H,O
-TiOCl, + H,O > TiO, + 2HCI
-titanium-bearing ore or concentrates was reported by Lakshmanan
-MgCl, + H,O > MgO + 2HCI
-
-(16)
-pressure with a lixiviant containing a chloride and hydrochloric acid ina
-In another patent by Thomas (1985), a dilute acid leach was used
-ahead of strong acid leach (25% HC1) to eliminate some easily dissolvable
-impurities. After ferrous chloride crystallisation and chlorination, the
-TiCl, was hydrolysed to obtain pigment grade TiO>. It was found that
-alcohols such as methanol, ethanol and ethylene glycol all substantially
-increased the leaching rate of ilmenite in mixed HCl-alcohol solutions
-(Girgin and Turker 1986).
-Ilmenite
-HCl
-Pyrohydrolysis
-
-Water S/L separation
-
-TiO, PPTN
-
-Raffinate
-
-Calcination Precipitation | a Pyrohydrolysis
-TiO> product
-A process for the production of pigment-grade TiO, using chloride
-media was developed (Lakshmanan et al., 2001, 2002, 2004a, 2004b,
-2005a, 2005b; Lakshmanan and Sridhar 2002; Puvvada et al. 2003). The
-process involves the leaching of the ore or concentrate with a hydrogen
-raffinate has a concentration of less than 50 mg/L Fe, and is treated to
-precipitate TiO, by addition of water. The solution rich in titanium
-chlorides is then hydrolysed, with calcium or magnesium chlorides, to
-precipitate titanium oxyhydrate which is then converted to TiO;
-presence of air and/or oxygen.
-Alternatively, the titanium in the leach solution is extracted by an
-organic phase, which is subjected to fractional distillation (Lakshmanan
-et al., 2004a, 2004b). The organic phase is so selected that they have
-different boiling points to that of the titanium halide in the leachate by an
-amount that permits separation by fractional distillation, typically a higher
-or lower boiling point than that of the titanium tetrachloride by 30 °C. The
-selected organic phase is phosphine oxides or esters and tertiary or
-titanium halide. Stripping the titanium halide from the organic phase is
-achieved by heating to volatilise the titanium tetrachloride, which is then
-the tetrachloride solids, titanium metal can be
-this process is to ensure environmental acceptance at low costs and to
-A method providing cost-effective extraction of titanium from
-et al. (2005a and 2005b). The first step is leaching the ore at atmospheric
-temperature range of less than 85°C. The concentration of the
-hydrochloric acid is at least 20% to allow titanium to be leached and
-remain in solution. The preferred chloride is magnesium chloride to
-enhance the extraction of titanium. The lixiviant may contain an
-oxidant, e.g. chlorate salts or chlorine. The redox potential (Eh) of the
-solution is controlled at least 350 mV in combination with the control of
-chloride concentration for leaching metal values.
-W. Zhang et al. / Hydrometallurgy 108 (2011) 177-188
-Ilmenite
-Pyrohydrolysis
-
-Fe 203 product Thermo stripping
-
-S/L separation Solid waste
-
-Solution
-
-Solvent extraction
-
-Stripped Org
-
-iL
-
-TiCl,
-
-Fused electrolysis
-Duyvesteyn et al. (2001a and 2002
-
-Nee
-
-and Verhulst et al. (2002 and
-to generate a leachate containing titanium and iron chloride and residue,
-(ii) cooling the solution to form crystals of FeCl, which are separated
-from the leachate, (iii) extracting titanium together with ferric ions by a
-first solvent extraction (SX) circuit with phosphine oxide to produce
-raffinate containing ferrous ions and other impurities, (iv) extracting
-ferric ions in the second SX circuit with an amine extractant from the
-loaded strip liquor of the first SX circuit, (v) hydrolysing the raffinate to
-produce pigment grade TiO;, (vi) pyrohydrolysing/distilling the strip
-liquor containing ferric ions to produce ferric oxides and reclaiming HCl
-for leaching. Alternatively, the ferric ions in the leachate could be reduced
-to ferrous ions electrolytically or by a metal such as iron scrap before the
-crystallisation of FeCl,. The advantages of the process include: (1) using
-inexpensive ilmenite as the feed material, (2) using gaseous HCl to
-solution, (3) using solvent extractions to separate titanium from iron and
-Concentrate Fe scrap
-
-Crystallisation
-
-Pyrohydrolysis
-
-/distillation -
-Hydrolysis
-
-Fe oxide
-Weak acid
-
-Residue
-
-TiO, product
-Ti metal
-other impurities, (4) Recovering iron as an oxide of potential commercial
-value (5) regenerating and recycling substantial gaseous HCI for leaching.
-4.3. Caustic leaching processes
-A novel process was patented for preparing titanium dioxide from
-titanium slag in sodium or potassium hydroxide solution by the
-researchers at Chinese Academy of Science (CAS) (Liu et al. 2006; Qi
-et al. 2005; Tong et al. 2007; Xue et al. 2009). The ilmenite is
-decomposed in concentrated KOH or NaOH solution under atmospheric
-pressure and an intermediate with high in titanium and low in iron is
-obtained by separation, which can be converted into pigment grade
-titanium dioxide after further treatment (Fig. 8). The reaction of ilmenite
-with concentrated KOH solutions led to the formation of potassium
-titanate (K,4Ti3;0g) and iron oxide could be described by:
-3FeTiO, + 4KOH — K,Ti,0g + 3FeO + 2H,O
-Ti slag
-
-NaOH recycle
-Decomposition in molten salt
-Concentrated
-Water treatment /separation Impurity removal
-
-NaOH liquor
-Solids/TiO,
-
-Refluxing in diluted acid By-product
-
-Hydrous Ti dioxide
-The phase transformation of potassium titanate was carried out by
-hydrolysing the potassium titanate in acid solution (pH 2.0
-
-ed
-400 °C to form well-crystallised anatase TiO2. Approximately 95-98%
-Ti in the titanium slag could be extracted under optimal conditions. In
-addition, the TiOz purity in the product was up to 99.3%.
-A similar process using caustic leaching for the production of
-finely ground titanium slag (—61+51 um) was reacted with a 10M
-hydrothermal product was identified by XRD as NayTi3QOg¢. Titanium
-dioxide with a rutile structure was obtained by acidification and
-<1.20. The purity of TiO, was >99% when HCl was used.
-requires relatively mild reaction conditions and high decomposition
-rate of titanium slag can be fulfilled under relatively low temperature
-hydrolysis in a spray dryer (Fig. 9). Nano-sized particles of TiO2 could be
-various inorganic salts and organic acids and organic Salts, e.g. oxalic
-Electrochemical techniques have been investigated for the reduction
-and dissolution of two different ilmenite samples in 450 ¢/L sulphuric
-acid solutions at elevated temperatures (Zhang and Nicol 2009). The
-Chemical
-
-Control
-Reagent
-
-Chloride solution
-——
-Spray hydrolysis
-
-Raffinate
-
-Nano-Ti0,,
-
-Milling Finishing
-more negative potentials the dissolution of ilmenite increases simulta-
-neously with the reduction of ilmenite to trivalent titanium. Hematite
-dissolved faster under reductive conditions than ilmenite. Studies of the
-the non-reductive dissolution reaction is insignificant under these
-challenges in energy consumption, dissolution kinetics and selectivity
-for advancement.
-titanium dioxide from aqueous titanium chloride solutions (Duyvesteyn
-et al., 2001b, 2001c, 2003). It features hydrolysing the solution via
-amorphous titanium oxide followed by further evaporation and spay
-acid to the titanium chloride solution (Duyvesteyn et al. 2001c). After
-hydrolysing, the titanium hydroxide is calcined to the desired form of
-titanium dioxide, being either anatase or rutile. The titanium dioxide is
-milled to provide the desired particle size distribution. The advantages
-W. Zhang et al. / Hydrometallurgy 108 (2011) 177-188
-controlled physical and chemical characteristics of the product, and
-low costs, since dilution of the solution is avoided and the acid can be
-(i) reacting a titanium compound with ammonia in an amount
-exceeding the stoichiometric amount necessary to convert the
-titanium compound to a titanium hydroxide or reacting a titanium
-product, and (ii) calcining the obtained product
-
-—
-
-Sakatani et al. 2002:
-Sakatani and Koike, 2003; 2004). The process easily produces titanium
-oxide, which exhibits high photocatalytic activity under irradiation by
-visible light, and having an average particle size of <20 nm.
-Solvothermal techniques (especially the hydrothermal method)
-2007). Unlike most other synthetic processes, the solvothermal
-synthesis is performed under much milder chemical conditions
-under relatively low temperatures. Compared to those methods
-involving calcination and milling, which tend to result in agglomerate
-formation and degradation of the surface, hydrothermal processing
-non-aggregated nanomaterials may be obtained readily. The sol-
-vothermal synthesis route is very similar to the hydrothermal route,
-the only difference is the precursor solution is usually non-aqueous
-and allows for the precise control over shape, size distribution,
-crystallinity of titanium dioxide nanoparticles or nanostructure. Some
-of these experimental parameters may include reaction temperature,
-reaction time, solvent type, surfactant type and precursor type.
-motif is very advantageous to maximise the TiO2 usage in applications.
-Brooks, G., Cooksey, M., Wellwood, G., Goodes, C., 2007. Challenges in light metals
-G6. Conclusions and recommendations
-Abundant ilmenite is becoming the main source of titanium. Many
-processes are commercially used or proposed to upgrade ilmenite to
-produce synthetic rutile. Most of these processes involve a combina-
-tion of the technologies of pyrometallurgy, hydrometallurgy and
-electrometallurgy, and are generally expensive.
-The commercialised thermo-chemical chloride processes such as
-Kroll and Hunter processes need higher grade natural rutile or
-upgraded synthetic rutile as the feed and chlorination step to produce
-intermediate TiCl, for the production of pigment grade TiO, and
-titanium metal. The thermo-chemical processes are very expensive
-made, the thermo-chemical processes, such as the Kroll and Hunter
-processes, hold little potential for significant cost reductions beyond
-current technology. The development of the electro-chemical pro-
-cesses for direct reduction of TiOz and electro-slag as feed material
-and in-situ electrolysis has achieved some success. However, some
-challenging issues such as redox cycling, feeding, kinetics, control heat
-balance have to be resolved before scale-up to commercial
-application.
-Compared to the thermo-chemical and electro-chemical processes,
-direct hydrometallurgical leach processes are advantageous in proces-
-sing abundant ilmenite ores, low energy consumption and produce
-sufficiently high quality of pigment grade TiO2 products for a wide range
-of applications and major demand. The main drawbacks of the
-conventional sulphate processes are the high consumption of H2SO,
-and the production of large amounts of sulphate wastes and high cost for
-been investigated intensively. Reclaiming HCl for recycling by hydro-
-lysis or pyrohydrolysis processes is a significant strategy to reduce
-extraction has been incorporated into processes to separate titanium
-from iron and other impurities to enable the use of low grade ilmenite as
-high purity TiO2. Novel caustic leaching process established features
-high selectivity of titanium over iron in leaching step. Titanium dioxide
-recommended.
-Acknowledgement
-The authors would like to thank Dr Matthew Jeffrey for reviewing
-this paper and providing valuable comments. The support of the Parker
-CRC for Integrated Hydrometallurgy Solutions (established and sup-
-ported under the Australian Government's Cooperative Research
-Centres Program) is gratefully acknowledged.
+Temperature (“C)
+Figure 3: Processing maps obtained for general steel 3310 from calculated flow stress at a fixed strain of 0.1. The
+coloured lines are isoefficiency contours, while the shaded areas are regions of unstable flow predicted using the
+Gegel (a) and Alexander-Malas (b) instability criteria.
+calculated from the same set of flow stress curves.'*! Therefore, the selection of which instability criterion
+is used and the interpretation of flow instability from the subsequently calculated processing map need to
+be approached with caution. Nonetheless, processing maps appear to be seen as useful tools and are quite
+widely used and applied to various types of alloys, e.g., steels,'”! titanium,'*! aluminium,'! and magnesium
+alloys.!'"! As such we have included the capability to calculate them in JMatPro®.
 References
-Anon, 1983. Titanium: past, present, and future. Report of the Panel on Assessment of
-Titanium Availability: Current and Future Needs of the Committee on Technical
-Aspects of Critical and Strategic Materials, National Materials Advisory Board
-Commission on Engineering and technical Systems National Research Council.
-National Academy Press, Washington, D.C. 1983.
+l. Y.V.R.K. Prasad, K. P. Rao, and S. Sasidhara (editors), Hot Working Guide: A Compendium of
+Processing Maps, ASM International: Ohio (2015)
+2. V.V.Kutumbarao and T. Rajagopalachary, “Recent developments in modeling the hot working
+behavior of metallic materials”, Bulletin of Materials Science 19, 677 (1996)
+3.
 
-Barksdale, J., 1966. Titanium: its Occurrence, Chemistry and Technology, Second
-edition. The Ronald Press Company, New York.
-Berkovich, S.A., 1975. Recovery of Titanium from Ores. US Patent, 3903239.
-Bracanin, B.F., Clements, R.J., Davey, J.M., 1980. Direct reduction — the Western titanium
-process for the production of synthetic rutile, ferutil and sponge iron AusIMM Pro.
-275, 33-42 September.
-production. Inst. Min Metall. C Miner. Process. Extractive Metallurgy Trans. 116 (1),
-Cardarelli, F. 2003. A method for electrowinning of titanium metal or alloy from
-titanium oxide containing compound in the liquid state. WO Patent No. 03/046258.
-Cassidy, P.W., Clements, R,J., Ellis, B.A., Rolfe, P.R., 1986. The AMC Narngulu synthetic
-rutile plant, a world source of ilmenite, rutile, monazite and zircon. Conference
-Proceedings. AusIMM, Perth, W.A, pp. 123-128.
-
-Chen, G.Z., Fray, D.]., Farthing, T.W., 2000. Direct electrochemical reduction of titanium
-dioxide to titanium in molten calcium chloride. Nature 407, 361-363.
-
-Chen, G.Z., Fray, D.J., Farthing, T.W., 2001. Cathodic deoxygenation of the alpha case on
-titanium and alloys in molten calcium chloride. Metallogr. Mater Trans. B 32B,
-1041-1052.
-Deura, T.N., Wakino, M., Matsunaga, T., Suzuki, R.O., Ono, K., 1998. Titanium powder
-production of TiCl4 gas injection into magnesium through molten salts. Metall.
-Trans. B 29B, 1167-1174.
-
-Doblin, C., Wellwood, G.A., 2007. TiRO™ — the development of a new process to produce
-titanium. Chemeca 2007, 23-26, September 2007. Melbourne, Victoria, Australia.
-Dooley Ill, G.J., 1975. Titanium production: ilmenite vs. rutile. JOM 8-16 March.
-
-Duyvesteyn, W., Sabachy, B., Verhulst, D., Edmund, V., West-sells, P.G., 2001a. Processing
-titaniferrous ore to titanium dioxide pigment, WO Patent 2001/00531 A1.
-
-Duyvesteyn, W., Spitler, T., Sabachy, B., Vince, A., Prochazka, J., 2001b. Processing
-aqueous solution to titanium dioxide pigment, WO Patent 2001/00530 Al.
-Duyvesteyn, W., Spitler, T., Sabachy, B., Prochazka, J., 2001c. Processing aqueous
-
-titanium chloride solution to ultrafine dioxide pigment, WO Patent 2001/12555 A2.
-Duyvesteyn, W., Sabachy, B., Edmund, V., Verhulst, D., West-sells, P. G., Spitler, T. M.,
-Vince, A., Burkholder, J. R., Paulus, B.J., and Huls, M., 2002. Processing titaniferrous
-ore to titanium dioxide pigment, US Patent 2002/6375923 B1.
-
-Duyvesteyn, W., Spitler, T., Sabachy, B., Vince, A., Prochazka, J., 2003. Processing
-aqueous solution to titanium dioxide pigment, US Patent 2003/6548039 B1.
-El-Hazek, N., Lasheen, T.A., El-Sheikh, R., Zaki, S.A., 2007. Hydrometallurgical criteria for
-TiO2 leaching from Rosetta ilmenite by hydrochloric acid. Hydrometallurgy 87, 45-50.
-
-Elliott, G.R.B., 1998. The continuous production of titanium powder using circulating
-molten salt. JOM 48-49 September 1998.
-Ellsworth, D.K., Verhulst, D., Spitler, T.M., Sabacky, B.J., 2000. Titanium nanoparticles
-move to the marketplace. Chem. Innov. 30, 30-35.
-
-Farrow, J.B., Ritchie, I.M., Mangono, P., 1987. The reaction between reduced ilmenite
-and oxygen in ammonium chloride solution. Hydrometallurgy 18, 21-38.
-Fray, D.J., 2001. Emerging molten salt technologies for metals production. JOM 26-31
-Gambogi, J|., 2009b. Titanium mineral concentrates. US Geological Surv. 172-173.
-Gambogi, J., 2010. Titanium and titanium dioxide, mineral commodity summaries. US
-monazite and zircon. Conference Proceedings. AusIMM, Perth, W.A, pp. 143
-Haves, F.H., Bomberger, H.B., Froes, F.H., Kaufman, L., Burte, H.M., 1984. Advances in
-titanium extraction metallurgy. JOM 70-75 June 1984.
-production, in Titanium: Science and Technology, 1, pp. 3-14.
-Kahn, |.A., 1984. Non-rutile feed stocks for the production of titanium. JOM 33-38 July 1984.
-Encyclopaedia of Chemical Technology, 23. John Wiley and Sons, pp. 98-130.
-Canadian patent 2289967.
-titanium metal from titanium-bearing ores involves leaching and selective removal!
-of iron values by solvent extraction. US Patent 2001/007
-
-646-Al.
-Lakshmanan, V.
-
-I., Sridhar, R., Ha
-recovery of titanium in mixed chloride media. WO patent 2005/049872.
-leaching. Hydrometallurgy 76, 123-129.
-concentrated KOH solution under atmospheric pressure. International |. Minera!
-In:
-
-Tien, J.K., Elliott, |.F. (Eds.), Metallurgical Treatises. AIME, pp. 171-189.
-formation in
-
-the Kroll red
-
-uction reactor.
-
-Metall. Trans. B 35B, 65-74.
-Ono, K., Suzuki,
-
-R.O., 2002
-
-. A new concept for producing Ti sponge: calciothermic
-and titanium dioxide production. JOM 38-41.
-Reaveley, Y.B.
-
--
-
-1980. Synthetic rutile production at Associated Minerals Consolidated
-ilmenite beneficiation process. In: Jones, M.]. (Ed.), Advances in Extractive
-Production of Ti
-
-tania. WO200403584
-Rosebaum, J.B., 1982. Titanium technology trends. JOM 76-79 June 1982.
-268-Al.
-used as photocatalyst by reacting titanium compound with ammonia exceeding
-Stoichiometric amount for converting titanium compound to titanium hydroxide,
-Stuart, A.D., Lawson, J.A.,
-
-Ward, C.B., and Peng, H., 20
-Suzuki, R.O., 2007. Direct reduction processes for titanium oxide in molten salt. JOM
-concept for electrowinning process of liquid titanium metal in molten Salt.
-titanium dioxide from titaniferous slag using KOH sub-molten salt method. Chinese
-van Vuuren, D.S., 2009. A critical evaluation of processes to produce primary titanium.
-of molten titanium from titanium dioxide. JOM 53-55 October 2005.
-process and its extension into the field of nanomaterials. CIM Bulletin ProQuest
-Proceedings of Chloride Metallurgy 2002, 2. Montreal, Canada, pp. 401-415. October,
-Watanable, M. and Sei, R
-Wellwood, G. A. and Doblin, C., 2008. Lo
-
-w temperature industrial process. US Patent
-Slag in sodium hydroxide system. Hydrometallurgy 95, 22-27.
-Zhang,
-
-S., Nicol, M.]., 2009. An electrochemical! study of the red
-
-uction and dissolution of
-ilmenite in
-
-sulfuric acid
-
-solutions. Hydrometallurgy 97, 146-152.
+S. V. S. N. Murty, B. N. Rao, and B. P. Kashyap, “Instability criteria for hot deformation of
+materials”, /nternational Materials Reviews 45, 15 (2000)
+4. X. Wang, Z. Liu, and H. Luo, “Hot deformation characterization of ultrahigh strength stainless steel
+through processing maps generated using different instability criteria’, Materials Characterization
+131, 480 (2017)
+S. Ghosh, “Interpretation of microstructural evolution using dynamic materials modeling’,
+Metallurgical and Materials Transactions A 31, 2973 (2000)
+6. S. Ghosh, “Interpretation of flow instability using dynamic material modeling’, Metallurgical and
+Materials Transactions A 33, 1569 (2002)
+7. S. Venugopal, S. L. Mannan, and Y. V. R. K. Prasad, “Processing map for hot working of stainless
+steel type AISI 316L”, Materials Science and Technology 9, 899 (1993)
+8. X. Ma, W. Zeng, K. Wang, Y. Lai, and Y. Zhou, “The investigation on the unstable flow behavior
+of T117 alloy in a+ phase field using processing map”, Materials Science and Engineering A 550,
+131 (2012)
+9. H. E. Hu, X. Y. Wang, and L. Deng, “Comparative study of hot-processing maps for 6061
+aluminium alloy constructed from power constitutive equation and hyperbolic sine constitutive
+equation’, Materials Science and Technology 30, 1321 (2014)
+10. S. Anbuselvan and S. Ramanathan, “Hot deformation and processing maps of extruded ZE41A
+Temperature (“C)
 

@@ -5,6 +5,52 @@ import os
 import pytesseract
 from PIL import Image as Img
 from pdf2image import convert_from_path
+import layoutparser as lp
+
+def extract_title_abstract(pdf_path):
+    try:
+        # Convert first page to image
+        images = convert_from_path(pdf_path, first_page=1, last_page=2, poppler_path=r'C:/Program Files/poppler/poppler-23.11.0/Library/bin')
+        first_page = np.array(images[0])
+        
+        # Initialize layout model
+        model = lp.Detectron2LayoutModel(
+                config_path ='lp://PubLayNet/faster_rcnn_R_50_FPN_3x/config', # In model catalog
+                label_map   ={0: "Text", 1: "Title", 2: "List", 3:"Table", 4:"Figure"}, # In model`label_map`
+                extra_config=["MODEL.ROI_HEADS.SCORE_THRESH_TEST", 0.8] # Optional
+            )
+        
+        # Detect layout
+        layout = model.detect(first_page)
+        
+        # Extract title (usually the first text block)
+        title = ""
+        for block in layout:
+            if block.type == "Title":
+                segment_image = (block
+                            .crop_image(first_page))
+                title = pytesseract.image_to_string(segment_image).strip()
+                break
+        
+        # Extract abstract
+        text = pytesseract.image_to_string(first_page)
+        abstract_start = text.find('Abstract') + len('Abstract')
+        abstract_end = text.find('Introduction')
+        
+        # If not found in first page, try second page
+        if abstract_start == -1 or abstract_end == -1:
+            if len(images) > 1:
+                text = pytesseract.image_to_string(images[1])
+                abstract_start = text.find('Abstract') + len('Abstract')
+                abstract_end = text.find('Introduction')
+        
+        abstract = text[abstract_start:abstract_end].strip() if abstract_start != -1 and abstract_end != -1 else ""
+        
+        return title, abstract
+    except Exception as e:
+        print(e)
+        return "testing", "testing"
+
 
 #detect text in passed image
 def detect_text(hsv_img):
@@ -116,7 +162,7 @@ def text_extraction(pdf_dir, progress_callback=None):
             (id INTEGER, text TEXT, title TEXT, abstract TEXT, text_corpora TEXT)
         ''')
         
-        pdf_file_no=1
+        pdf_file_no=10
         for filename in pdf_dir:
             if filename.endswith('.pdf'):
                 # print(os.path.join(pdf_dir, filename))
@@ -141,10 +187,14 @@ def text_extraction(pdf_dir, progress_callback=None):
                     if progress_callback is not None:
                         progress_callback(i / total_images)
                 f_corpora.write(text + '\n')
+                
+                title, abstract = extract_title_abstract(pdf_file)
+                print(title, abstract)
+                
                 c.execute('''
                     INSERT INTO articles (id, text, title, abstract)
                     VALUES (?, ?, ?, ?)
-                ''', (pdf_file_no, text, "testing", "testing"))
+                ''', (pdf_file_no, text, title, abstract))
                 pdf_file_no += 1
             # only for testing purpose
             # if(pdf_file_no > 1):

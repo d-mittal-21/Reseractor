@@ -7,7 +7,108 @@ from nltk.tokenize import sent_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
+import pandas as pd
+import numpy as np
+from nltk import pos_tag
+import re
+from typing import List, Dict, Tuple
 import sqlite3
+
+class ExperimentalDataExtractor:
+    def __init__(self):
+        self.number_pattern = r'[-+]?\d*\.?\d+'
+        self.measurement_pattern = None
+        self.search_terms = []
+        self.window_size = 5
+        
+    def set_parameters(self, search_terms: List[str], units: List[str]):
+        self.search_terms = [term.strip().lower() for term in search_terms]
+        # Create regex pattern for measurements with units
+        units_pattern = '|'.join(map(re.escape, units))
+        self.measurement_pattern = f"{self.number_pattern}\s*({units_pattern})"
+        
+    def extract_data_from_text(self, text: str, doc_id: int) -> List[Dict]:
+        results = []
+        sentences = sent_tokenize(text)
+        
+        for sentence in sentences:
+            sentence_lower = sentence.lower()
+            
+            # First check if sentence contains any search terms
+            if not any(term in sentence_lower for term in self.search_terms):
+                continue
+            
+            # Find all numbers with units
+            matches = list(re.finditer(self.measurement_pattern, sentence))
+            if not matches:
+                continue
+            
+            # Process each measurement found
+            for match in matches:
+                full_match = match.group(0)
+                value = float(re.search(self.number_pattern, full_match).group())
+                unit = match.group(1)
+                
+                # Find which search term this measurement relates to
+                for term in self.search_terms:
+                    if term in sentence_lower:
+                        results.append({
+                            'doc_id': doc_id,
+                            'parameter': term,
+                            'value': value,
+                            'unit': unit,
+                            'sentence': sentence
+                        })
+        
+        return results
+
+def extract_experimental_data(search_terms: List[str], 
+                            selected_topics: List[str],
+                            units: List[str]) -> Tuple[pd.DataFrame, pd.DataFrame]:
+    try:
+        # Initialize extractor
+        extractor = ExperimentalDataExtractor()
+        extractor.set_parameters(search_terms + selected_topics, units)
+        
+        # Get text from database
+        conn = sqlite3.connect('database/articles.db')
+        df = pd.read_sql_query("SELECT id, text FROM articles", conn)
+        conn.close()
+        
+        all_results = []
+        for _, row in df.iterrows():
+            results = extractor.extract_data_from_text(row['text'], row['id'])
+            all_results.extend(results)
+        
+        # Convert to DataFrame
+        results_df = pd.DataFrame(all_results)
+        print("Found results:", len(all_results))  # Debug print
+        
+        if not results_df.empty:
+            # Create summary view
+            summary_df = results_df.groupby(['doc_id', 'parameter', 'unit'])['value'].agg(list).reset_index()
+            
+            # Create pivot table
+            pivot_df = pd.pivot_table(
+                summary_df,
+                index='doc_id',
+                columns=['parameter', 'unit'],
+                values='value',
+                aggfunc='first'  # Changed from lambda x: x to 'first'
+            ).reset_index()
+            
+            # Flatten column names
+            pivot_df.columns = [f"{col[0]}_{col[1]}_{col[2]}" if isinstance(col, tuple) and len(col) == 3 
+                              else (f"{col[0]}_{col[1]}" if isinstance(col, tuple) else col) 
+                              for col in pivot_df.columns]
+            
+            return results_df, pivot_df
+        
+        return pd.DataFrame(), pd.DataFrame()
+        
+    except Exception as e:
+        print(f"Error in data extraction: {e}")
+        return pd.DataFrame(), pd.DataFrame()
 
 
 def taging(lemm):
@@ -107,11 +208,12 @@ def topic_extract(ids):
       if row[0] in f_mc:
         freq.append(row[1])
     conn.close()
-    return f_mc, success
+    units_sear = ['kg','g','kgf','gf','N','kN','mg','°C','μL','ns','g/cm3','kg/m3','K','%','nm','cm','°','h','M','ml','rpm','°/min','mg/ml']
+    return f_mc, units_sear, success
   except Exception as e:
     print(e)
     success = False
-    return None, success
+    return None, None, success
   
 def condition_extraction(search):
   success = True
